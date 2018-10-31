@@ -63,7 +63,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean updateNote(SQLiteDatabase db, int id, String title, String body){
+    public boolean updateNote(SQLiteDatabase db, long id, String title, String body){
         Calendar c = Calendar.getInstance();
         int year = c.get(Calendar.YEAR);
         int month = c.get(Calendar.MONTH) + 1;
@@ -78,7 +78,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return numberOfRowsAffected > 0;
     }
 
-    public boolean deleteNote(SQLiteDatabase db, int id){
+    public boolean deleteNote(SQLiteDatabase db, long id){
         int numberOfRowsDeleted = db.delete(TABLE_NOTES, COL_ID + "=" + id, null);
         return numberOfRowsDeleted > 0;
     }
@@ -102,3 +102,4 @@ public class DbHelper extends SQLiteOpenHelper {
         }
 
     }
+
